@@ -1,3 +1,13 @@
+/*
+ * This file is part of NxFIFTEEN Fitness Core.
+ *
+ * @link      https://nxfifteen.me.uk/projects/nxcore/
+ * @link      https://gitlab.com/nx-core/frontend/angular
+ * @author    Stuart McCulloch Anderson <stuart@nxfifteen.me.uk>
+ * @copyright Copyright (c) 2020. Stuart McCulloch Anderson <stuart@nxfifteen.me.uk>
+ * @license   https://nxfifteen.me.uk/api/license/mit/license.html MIT
+ */
+
 import {Component, Inject, OnInit} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 import {AuthenticationService} from '../../_services';
@@ -32,7 +42,8 @@ export class AuthWithGoogleComponent implements OnInit {
         this.currentUser.firstrun = false;
         this.authenticationService.updateStorage();
       } else {
-        // this.authUrl = `${environment.apiUrl}/auth/with/fitbit/${this.currentUser.username}?key=${this.currentUser.token}&return=${environment.uiUrl}`;
+        // this.authUrl = `${environment.apiUrl}/auth/with/fitbit/${this.currentUser.username}?key=${this.currentUser.token}&return=` +
+        //           this.document.location.protocol + `//` + this.document.location.host + ``;
         // this.document.location.href = this.authUrl;
       }
     });
